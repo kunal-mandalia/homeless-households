@@ -1,0 +1,11 @@
+{
+  "extends": "./config/tsconfig.base",
+  "compilerOptions": {
+      "outDir": "./server/dist",
+      "allowJs": true,
+      "target": "es5",
+  },
+  "include": [
+      "./server/src/**/*"
+  ]
+}
