@@ -6,7 +6,7 @@
     "start-server": "cd ./server && yarn start",
     "build-server": "cd ./server && yarn build",
     "test-server": "cd ./server && yarn test",
-    "deploy-server": "cd ./server && yarn publish-heroku",
+    "deploy-server": "cd ./server && yarn deploy-heroku",
     "ci-test-server": "cd ./server && yarn ci-test",
     "install-web-client": "cd ./web-client && yarn install",
     "start-web-client": "cd ./web-client && yarn start",
