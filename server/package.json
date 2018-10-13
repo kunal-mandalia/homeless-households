@@ -33,5 +33,9 @@
     "express": "4.16.4",
     "husky": "1.1.2",
     "winston": "3.1.0"
+  },
+  "engines": {
+    "node": "8.12.x",
+    "npm": "6.3.x"
   }
 }
