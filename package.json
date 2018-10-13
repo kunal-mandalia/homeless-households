@@ -1,0 +1,15 @@
+{
+  "name": "homeless-households",
+  "author": "Kunal Mandalia <kunal.v.mandalia@gmail.com> (http://kunalmandalia.com/)",
+  "scripts": {
+    "install-server": "cd ./server && yarn install",
+    "start-server": "cd ./server && yarn start",
+    "build-server": "cd ./server && yarn build",
+    "test-server": "cd ./server && yarn test",
+    "ci-test-server": "cd ./server && yarn ci-test",
+    "install-web-client": "cd ./web-client && yarn install",
+    "start-web-client": "cd ./web-client && yarn start",
+    "build-web-client": "cd ./web-client && yarn build",
+    "test-web-client": "cd ./web-client && yarn test"
+  }
+}
