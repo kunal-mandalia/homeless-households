@@ -10,6 +10,7 @@
     "install-web-client": "cd ./web-client && yarn install",
     "start-web-client": "cd ./web-client && yarn start",
     "build-web-client": "cd ./web-client && yarn build",
-    "test-web-client": "cd ./web-client && yarn test"
+    "test-web-client": "cd ./web-client && yarn test",
+    "ci-test-web-client": "cd ./web-client && yarn ci-test"
   }
 }
