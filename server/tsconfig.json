@@ -1,6 +1,7 @@
 {
-  "extends": "../config/tsconfig.base",
   "compilerOptions": {
+      "noImplicitAny": true,
+      "strictNullChecks": true,
       "outDir": "dist",
       "allowJs": true,
       "target": "es5",
