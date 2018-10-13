@@ -10,7 +10,8 @@
     "build": "rm -rf ./dist && tsc --build tsconfig.prod.json",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --watch",
-    "ci-test": "yarn tslint && jest"
+    "ci-test": "yarn tslint && jest",
+    "deploy-heroku": "cd ../ && git subtree push --prefix server heroku-server master || true"
   },
   "devDependencies": {
     "@types/express": "4.16.0",

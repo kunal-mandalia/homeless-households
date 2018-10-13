@@ -6,11 +6,13 @@
     "start-server": "cd ./server && yarn start",
     "build-server": "cd ./server && yarn build",
     "test-server": "cd ./server && yarn test",
+    "deploy-server": "cd ./server && yarn publish-heroku",
     "ci-test-server": "cd ./server && yarn ci-test",
     "install-web-client": "cd ./web-client && yarn install",
     "start-web-client": "cd ./web-client && yarn start",
     "build-web-client": "cd ./web-client && yarn build",
     "test-web-client": "cd ./web-client && yarn test",
-    "ci-test-web-client": "cd ./web-client && yarn ci-test"
+    "ci-test-web-client": "cd ./web-client && yarn ci-test",
+    "deploy-web-client": "cd ./web-client && yarn deploy-heroku"
   }
 }
