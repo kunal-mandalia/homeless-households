@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+      "outDir": "dist",
+      "allowJs": true,
+      "target": "es5",
+  },
+  "exclude": [
+    "src/**/*.test.ts",
+    "src/**/*.test.js",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.js",
+  ]
+}
