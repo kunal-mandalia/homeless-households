@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "dist/app.js",
+  "main": "build/app.js",
   "repository": "https://github.com/kunal-mandalia/homeless-households.git",
   "author": "Kunal Mandalia <kunal.v.mandalia@gmail.com> (http://kunalmandalia.com/)",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/app.js",
-    "build": "rm -rf ./dist && tsc --build tsconfig.prod.json",
+    "start": "node ./build/app.js",
+    "build": "rm -rf ./build && tsc --build tsconfig.prod.json",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --watch",
     "ci-test": "yarn tslint && jest",

@@ -2,7 +2,7 @@
   "compilerOptions": {
       "noImplicitAny": true,
       "strictNullChecks": true,
-      "outDir": "dist",
+      "outDir": "build",
       "allowJs": true,
       "target": "es5",
   },
