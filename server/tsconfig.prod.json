@@ -1,10 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-      "outDir": "build",
-      "allowJs": true,
-      "target": "es5",
-  },
   "exclude": [
     "src/**/*.test.ts",
     "src/**/*.test.js",

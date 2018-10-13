@@ -5,6 +5,7 @@
       "outDir": "build",
       "allowJs": true,
       "target": "es5",
+      "lib": ["es6"]
   },
   "include": [
       "src/**/*"
