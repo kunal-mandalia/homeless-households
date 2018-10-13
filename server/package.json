@@ -8,16 +8,16 @@
   "scripts": {
     "start": "node ./build/app.js",
     "build": "rm -rf ./build && tsc --build tsconfig.prod.json",
-    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --watch",
-    "ci-test": "yarn tslint && jest",
+    "ci-test": "yarn lint && jest",
     "deploy-heroku": "cd ../ && git subtree push --prefix server heroku-server master || true"
   },
   "devDependencies": {
     "@types/express": "4.16.0",
     "@types/jest": "23.3.5",
     "@types/node": "10.11.7",
-    "husky": "1.1.2",
+    "@types/winston": "2.4.4",
     "jest": "23.6.0",
     "ts-jest": "23.10.4",
     "tslint": "5.11.0",
@@ -26,10 +26,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn tslint"
+      "pre-commit": "yarn lint"
     }
   },
   "dependencies": {
-    "express": "4.16.4"
+    "express": "4.16.4",
+    "husky": "1.1.2",
+    "winston": "3.1.0"
   }
 }
