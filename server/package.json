@@ -6,10 +6,18 @@
   "author": "Kunal Mandalia <kunal.v.mandalia@gmail.com> (http://kunalmandalia.com/)",
   "license": "MIT",
   "scripts": {
-    "start-server": "node ./dist/app.js",
-    "build-server-ts": "tsc --build tsconfig.json"
+    "start": "node ./dist/app.js",
+    "build": "tsc --build tsconfig.json",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "devDependencies": {
+    "husky": "1.1.2",
+    "tslint": "5.11.0",
     "typescript": "3.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn tslint"
+    }
   }
 }
