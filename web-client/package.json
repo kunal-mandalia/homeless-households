@@ -1,6 +1,7 @@
 {
   "name": "web-client",
   "version": "0.1.0",
+  "author": "Kunal Mandalia <kunal.v.mandalia@gmail.com> (http://kunalmandalia.com/)",
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
