@@ -18,11 +18,11 @@ The monorepo consists of a server and web client.
 * Start server: `yarn build-server && yarn start-server`
 * Start web-client: `yarn build-web-client && yarn start-web-client`
 
-## Test
+### Test
 * Test server: `yarn test-server`
 * Test web-client: `yarn test-web-client`
 
-## Deploy
+### Deploy
 * Deploy server: `yarn deploy-server`
 * Deploy web-client: `yarn deploy-web-client`
 
