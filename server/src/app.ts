@@ -1,7 +1,8 @@
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
-import { resolver, schema } from './graphql';
-import { logger } from './logger/index';
+import { db } from './lib/db'
+import { resolver, schema } from './lib/graphql';
+import { logger } from './lib/logger/index';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -20,5 +21,6 @@ app.listen(PORT, () => {
   logger.info(`
     homeless-household-server running on port ${PORT}
     graphiql running on /graphql
+    db: ${Object.keys(db)}
   `);
 });
