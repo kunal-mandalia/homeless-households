@@ -8,6 +8,7 @@ By surfacing the data in a compelling manner, learn about how dimensions such as
 
 ## Demo
 Web-client: https://homeless-households-web-client.herokuapp.com/
+Server API (GraphiQL): https://homeless-households-server.herokuapp.com/graphql
 
 ## Getting started
 The monorepo consists of a server and web client.
