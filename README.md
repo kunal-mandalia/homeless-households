@@ -7,8 +7,8 @@ Insights into the causes of homelessness in London
 By surfacing the data in a compelling manner, learn about how dimensions such as age, need, and ethnicity affect the level of support provided by the Local Authority.
 
 ## Demo
-Web-client: https://homeless-households-web-client.herokuapp.com/
-Server API (GraphiQL): https://homeless-households-server.herokuapp.com/graphql
+* Web-client: https://homeless-households-web-client.herokuapp.com/
+* Server API (GraphiQL): https://homeless-households-server.herokuapp.com/graphql
 
 ## Getting started
 The monorepo consists of a server and web client.
