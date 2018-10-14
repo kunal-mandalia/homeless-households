@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  hh_db_postgres:
+    container_name: hh_db_postgres
+    image: postgres:10.1-alpine
+    environment:
+      - POSTGRES_HOST=hh_db_postgres
+      - POSTGRES_DB=homeless_households
+      - POSTGRES_USER=hh_admin
+      - POSTGRES_PASS=
+    ports:
+      - "5432:5432"
+    volumes:
+      - hh_db_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  hh_db_postgres_data:

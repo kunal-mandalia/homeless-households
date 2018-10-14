@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "hh_admin",
+    "password": null,
+    "database": "homeless_households",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
