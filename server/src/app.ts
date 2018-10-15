@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
-import { db } from './lib/db'
-import { resolver, schema } from './lib/graphql';
+import { db } from './db'
+import { resolver, schema } from './graphql';
 import { logger } from './lib/logger/index';
 
 const PORT = process.env.PORT || 8080;
