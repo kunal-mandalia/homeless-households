@@ -32,5 +32,5 @@ Heroku is the hosting provider for both the server and web-client. Since Heroku 
 ## Implementation
 
 ### Architecture
-Having worked with some great architects and inspired by an excellent [lecture](https://www.youtube.com/watch?v=x30DcBfCJRI&t=6277s) on architecture, a lightweight architecture has been defined inside [docs](./docs/architecture.md).
+Having worked with some great architects and inspired by an excellent [lecture](https://www.youtube.com/watch?v=x30DcBfCJRI&t=6277s) on architecture, a lightweight architecture has been [sketched](./docs/architecture.md).
 
