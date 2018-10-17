@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const homelessHouseholds = sequelize.define('homeless_households', {
+  const homelessHouseholds = sequelize.define('HomelessHouseholds', {
     age: DataTypes.INTEGER,
     createdAt: {
       allowNull: true,
