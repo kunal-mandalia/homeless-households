@@ -6,8 +6,9 @@
       "allowJs": true,
       "target": "es5",
       "lib": [
-        "es6",
-        "esnext.asynciterable"
+        "es2015",
+        "es2017",
+        "esnext.asynciterable",
       ]
   },
   "include": [

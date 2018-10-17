@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 module.exports = {
   development: {
     database: "homeless_households",
     dialect: "postgres",
     host: "127.0.0.1",
-    password: null,
+    password: "hh_password",
     username: "hh_admin",
   },
   production: {
