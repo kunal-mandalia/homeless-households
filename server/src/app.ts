@@ -1,6 +1,5 @@
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
-import { db } from './db'
 import { resolver, schema } from './graphql';
 import { logger } from './lib/logger/index';
 
@@ -21,6 +20,5 @@ app.listen(PORT, () => {
   logger.info(`
     homeless-household-server running on port ${PORT}
     graphiql running on /graphql
-    db: ${Object.keys(db)}
   `);
 });

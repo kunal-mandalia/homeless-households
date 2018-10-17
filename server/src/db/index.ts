@@ -1,1 +1,3 @@
-export { db } from './db';
+import db from './models';
+
+export default db;
