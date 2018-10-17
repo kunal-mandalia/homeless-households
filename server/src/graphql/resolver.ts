@@ -3,14 +3,15 @@ import models from '../db';
 const { HomelessHouseholds } = models;
 
 const resolver = {
-  hello: async () => {
-    const records = await HomelessHouseholds.findOne({
-      where: {
-        age: 35
-      }
-    });
-    // console.log(">>> records", records);
-    return 'Hello world';
+  getHomelessHouseholds: async () => {
+    const records = await HomelessHouseholds
+      .findAll({
+        where: {
+          age: 35
+        }
+      })
+      .map(record => record.get({ plain: true }))
+    return records;
   }
 }
 
