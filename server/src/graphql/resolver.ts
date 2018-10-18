@@ -1,14 +1,27 @@
 import models from '../db';
+import { IHomelessHouseholdsAttributes } from '../db/models/homelessHouseholds';
 
-const { HomelessHouseholds } = models;
+interface IHomelessHouseholdsInput {
+  input: {
+    limit: number;
+    offset: number;
+  }
+}
 
-const resolver = {
-  getHomelessHouseholds: async () => {
-    const records = await HomelessHouseholds
+interface IResolver {
+  getHomelessHouseholds(input: IHomelessHouseholdsInput): Promise<IHomelessHouseholdsAttributes[]>;
+}
+
+const resolver: IResolver = {
+  getHomelessHouseholds: async ({ input: { limit = 10, offset = 0 } }) => {
+    const records = await models.HomelessHouseholds
       .findAll({
-        where: {
-          age: 35
-        }
+        limit,
+        offset,
+        order: [
+          ['decisionDate', 'DESC'],
+          ['registrationDate', 'DESC']
+        ]
       })
       .map(record => record.get({ plain: true }))
     return records;

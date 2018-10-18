@@ -4,6 +4,11 @@ const { buildSchema } = graphql;
 const schema = buildSchema(`
   scalar Date
 
+  input HomelessHouseholdsInput {
+    limit: Int
+    offset: Int
+  }
+
   type HomelessHouseholds {
     id: Int
     age: Int
@@ -22,7 +27,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getHomelessHouseholds: [HomelessHouseholds!]
+    getHomelessHouseholds(input: HomelessHouseholdsInput): [HomelessHouseholds!]
   }
 `);
 
