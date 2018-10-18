@@ -10,24 +10,24 @@ const schema = buildSchema(`
   }
 
   type HomelessHouseholds {
-    id: Int
-    age: Int
-    createdAt: Date
-    decision: String
-    decisionCode: Int
-    decisionDate: Date
-    ethnicity: String
-    nationality: String
-    need: String
-    publisherLabel: String
-    publisherUri: String
-    reason: String
-    registrationDate: Date
-    updatedAt: Date
+    id: Int!
+    age: Int!
+    createdAt: Date!
+    decision: String!
+    decisionCode: Int!
+    decisionDate: Date!
+    ethnicity: String!
+    nationality: String!
+    need: String!
+    publisherLabel: String!
+    publisherUri: String!
+    reason: String!
+    registrationDate: Date!
+    updatedAt: Date!
   }
 
   type Query {
-    getHomelessHouseholds(input: HomelessHouseholdsInput): [HomelessHouseholds!]
+    getHomelessHouseholds(input: HomelessHouseholdsInput!): [HomelessHouseholds]!
   }
 `);
 
