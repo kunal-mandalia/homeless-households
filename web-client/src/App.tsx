@@ -6,7 +6,7 @@ import logo from './logo.svg';
 class App extends React.Component {
 
   public componentDidMount() {
-    this.getInitialData();
+    // this.getInitialData();
   }
 
   public async getInitialData() {
