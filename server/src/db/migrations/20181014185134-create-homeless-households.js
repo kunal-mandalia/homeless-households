@@ -1,10 +1,10 @@
 'use strict';
 module.exports = {
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('homeless_households');
+    return queryInterface.dropTable('HomelessHouseholds');
   },
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('homeless_households', {
+    return queryInterface.createTable('HomelessHouseholds', {
       age: {
         type: Sequelize.INTEGER
       },

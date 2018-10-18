@@ -54,9 +54,9 @@ async function getSeedData() {
 }
 
 export default {
-  down: (queryInterface: QueryInterface) => queryInterface.bulkDelete("homeless_households", {}, {}),
+  down: (queryInterface: QueryInterface) => queryInterface.bulkDelete("HomelessHouseholds", {}, {}),
   up: async (queryInterface: QueryInterface) => {
     const records = await getSeedData();
-    return queryInterface.bulkInsert("homeless_households", records, {});
+    return queryInterface.bulkInsert("HomelessHouseholds", records, {});
   },
 }

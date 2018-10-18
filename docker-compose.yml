@@ -8,7 +8,7 @@ services:
       - POSTGRES_HOST=hh_db_postgres
       - POSTGRES_DB=homeless_households
       - POSTGRES_USER=hh_admin
-      - POSTGRES_PASS=
+      - POSTGRES_PASSWORD=hh_password
     ports:
       - "5432:5432"
     volumes:
