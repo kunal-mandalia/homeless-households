@@ -7,13 +7,11 @@ import { logger } from './lib/logger/index';
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.use(cors());
-
-app.get('/status', (req, res) => {
+app.get('/status', cors(), (req, res) => {
   return res.json({ status: 200 });
 });
 
-app.use('/graphql', graphqlHTTP({
+app.use('/graphql', cors(), graphqlHTTP({
   graphiql: true,
   rootValue: resolver,
   schema,
