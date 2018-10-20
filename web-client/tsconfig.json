@@ -20,6 +20,7 @@
     "noUnusedLocals": true
   },
   "exclude": [
+    "config-overrides.js",
     "node_modules",
     "build",
     "scripts",

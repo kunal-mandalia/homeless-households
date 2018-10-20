@@ -4,6 +4,7 @@
   "author": "Kunal Mandalia <kunal.v.mandalia@gmail.com> (http://kunalmandalia.com/)",
   "private": true,
   "dependencies": {
+    "antd": "3.10.1",
     "apollo-boost": "0.1.16",
     "graphql": "14.0.2",
     "react": "^16.5.2",
@@ -13,19 +14,22 @@
     "styled-components": "4.0.2"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "ci-test": "react-scripts-ts test --env=jsdom --coverage",
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
+    "ci-test": "react-app-rewired test --env=jsdom --coverage --scripts-version react-scripts-ts",
     "deploy-heroku": "cd ../ && git subtree push --prefix web-client heroku-web-client master || true"
   },
   "devDependencies": {
+    "@types/antd": "1.0.0",
     "@types/graphql": "14.0.3",
     "@types/jest": "23.3.5",
     "@types/node": "10.11.7",
     "@types/react": "16.4.16",
     "@types/react-dom": "16.0.9",
     "@types/styled-components": "4.0.1",
+    "react-app-rewired": "1.6.2",
+    "ts-import-plugin": "1.5.5",
     "typescript": "3.1.3"
   }
 }
