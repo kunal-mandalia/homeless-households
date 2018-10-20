@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { Layout } from '../components/Layout';
 import { GET_HOMELESS_HOUSEHOLDS, QueryGetHomelessHouseholds } from '../graphql/queries/getHomelessHouseholds';
-import { LayourContainer } from './LayoutContainer';
 
 export class HomelessHouseholdsContainer extends React.Component<{}> {
   public state = {
@@ -15,7 +15,7 @@ export class HomelessHouseholdsContainer extends React.Component<{}> {
         if (error) { return <p>Error :(</p> };
         if (!data) { return null };
         return (
-          <LayourContainer
+          <Layout
             data={data}
           />
         )
