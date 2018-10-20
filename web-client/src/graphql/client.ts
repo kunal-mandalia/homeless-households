@@ -1,7 +1,8 @@
-import ApolloClient from "apollo-boost";
+import ApolloClient from 'apollo-boost';
+import { RUNTIME_VARIABLES } from '../config/runtime'
 
 const client = new ApolloClient({
-  uri: "http://localhost:8080/graphql"
+  uri: RUNTIME_VARIABLES.API_HOST
 });
 
 export default client;
