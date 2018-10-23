@@ -3,10 +3,16 @@ import { Query } from "react-apollo";
 
 export const GET_HOMELESS_HOUSEHOLDS = gql`
 {
-  getHomelessHouseholds(input: { limit: 2, offset: 0 }) {
+  getHomelessHouseholds(input: { limit: 100, offset: 0 }) {
     id
-    need
+    age
     decision
+    decisionCode
+    decisionDate
+    ethnicity
+    nationality
+    reason
+    need
   }
 }
 `

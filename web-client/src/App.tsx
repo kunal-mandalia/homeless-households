@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './App.css';
 
-import { HomelessHouseholdsContainer } from './containers/HomelessHouseholdsContainer';
+import { HomelessHouseholdsContainer } from './containers/HomelessHouseholds';
 
 
 class App extends React.Component {

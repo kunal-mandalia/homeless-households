@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Filters } from './Filters';
 
 const LayoutWrapper = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const LayoutWrapper = styled.div`
 
 const Sidebar = styled.div`
   background-color: #d9d9d9;
-  flex-basis: 200px;
+  flex-basis: 320px;
   flex-grow: 1;
 `
   
@@ -21,10 +22,32 @@ const Tiles = styled.div`
 `
 
 interface ILayoutProps {
-  data: IQueryHomelessHouseholds
+  count: number,
+  data: IHomelessHouseholds[],
+  filters: IFilters,
+  filteredData: IHomelessHouseholds[],
+  total: number,
+  handleFilterChange(filter: string, value: any): void,
 }
 
-export const Layout: React.SFC<ILayoutProps> = ({ data: getHomelessHouseholds }) => <LayoutWrapper>
-  <Tiles />
-  <Sidebar />
-</LayoutWrapper>
+export const Layout: React.SFC<ILayoutProps> = ({
+  count,
+  data,
+  filteredData,
+  filters,
+  handleFilterChange,
+  total,
+}) => (
+  <LayoutWrapper>
+    <Tiles />
+    <Sidebar>
+      <Filters
+        count={count}
+        data={data}
+        filters={filters}
+        onFilterChange={handleFilterChange}
+        total={total}
+      />
+    </Sidebar>
+  </LayoutWrapper>
+)
