@@ -11,6 +11,11 @@ const filterNullableValue = (record: IHomelessHouseholds, filters: IFilters) => 
   if (!filters[filterAttribute]) {
     return true;
   }
+  if (filterAttribute === 'ageRange') {
+    const age = record.age;
+    const [min, max] = filters.ageRange;
+    return (age >= min) && (age <= max);
+  }
   return record[filterAttribute] === filters[filterAttribute];
 }
 
@@ -33,7 +38,10 @@ export class HomelessHouseholdsContainer extends React.Component<{}, IState> {
       return (
         nullableFilter('decision') &&
         nullableFilter('need') &&
-        nullableFilter('reason')
+        nullableFilter('reason') &&
+        nullableFilter('ageRange') &&
+        nullableFilter('ethnicity') &&
+        nullableFilter('nationality')
       )
     })
   }
