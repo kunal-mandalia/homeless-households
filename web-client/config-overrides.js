@@ -1,5 +1,6 @@
 const tsImportPluginFactory = require('ts-import-plugin')
-const { getLoader } = require("react-app-rewired");
+const { getLoader } = require('react-app-rewired');
+const rewireLess = require('react-app-rewire-less');
 
 module.exports = function override(config, env) {
   const tsLoader = getLoader(
@@ -15,10 +16,18 @@ module.exports = function override(config, env) {
       before: [ tsImportPluginFactory({
         libraryDirectory: 'es',
         libraryName: 'antd',
-        style: 'css',
+        style: true,
       }) ]
     })
   };
+
+  config = rewireLess.withLoaderOptions({
+    javascriptEnabled: true,
+    modifyVars: {
+      '@text-color': 'rgba(0, 0, 0, 0.9)',
+      '@heading-color': 'rgba(255, 255, 255, 0.9)',
+    },
+  })(config, env);
 
   return config;
 }
