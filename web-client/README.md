@@ -30,3 +30,7 @@ Key:
 * (C): Class with state, methods
 * (S): Stateless Functional Component
 ```
+
+## UI Theme AntDesign
+
+Antdesign has been themed via `config-overrides.js`.

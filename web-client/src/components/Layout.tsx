@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { COLORS } from '../constants';
 import { Filters } from './Filters';
 
 const LayoutWrapper = styled.div`
@@ -10,15 +11,15 @@ const LayoutWrapper = styled.div`
 `
 
 const Sidebar = styled.div`
-  background-color: #d9d9d9;
-  flex-basis: 320px;
-  flex-grow: 1;
+  background-color: ${COLORS.maroon};
+  flex-basis: 385px;
+  flex-grow: 0;
 `
   
 const Tiles = styled.div`
   background-color: #e3e3e3;
   flex-basis: 400px;
-  flex-grow: 3;
+  flex-grow: 5;
 `
 
 interface ILayoutProps {
