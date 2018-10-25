@@ -1,4 +1,4 @@
-import { Form, Select, Slider } from 'antd';
+import { Form, Icon, Select, Slider } from 'antd';
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -74,8 +74,9 @@ export const Filters: React.SFC<IProps> = ({
 
   return (
     <FiltersWrapper>
-      <h1>Homeless Households</h1>
-      
+      <h1><Icon type="home" theme="outlined" /> homeless households</h1>
+      <br />
+
       <FormItem
         {...formItemLayout}
         label="Decision"
