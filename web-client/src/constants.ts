@@ -1,6 +1,6 @@
 const COLORS = {
-  background: '#49494b',
-  maroon: '#884646',
+  MAROON: '#884646',
+  MAROON_LIGHT: '#987777',
 }
 
 export {
