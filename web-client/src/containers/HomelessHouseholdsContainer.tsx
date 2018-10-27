@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Layout } from '../components/Layout';
+import { HomelessHouseholds } from '../components/HomelessHouseholds';
 import { LoadingIndicator } from '../components/LoadingIndicator';
 import { GET_HOMELESS_HOUSEHOLDS, QueryGetHomelessHouseholds } from '../graphql/queries/getHomelessHouseholds';
 
@@ -68,8 +68,9 @@ export class HomelessHouseholdsContainer extends React.Component<{}, IState> {
         const filteredData = this.filterData(getHomelessHouseholds);
         const count = filteredData.length;
         const total = getHomelessHouseholds.length;
+
         return (
-          <Layout
+          <HomelessHouseholds
             count={count}
             data={getHomelessHouseholds}
             filteredData={filteredData}
@@ -83,3 +84,4 @@ export class HomelessHouseholdsContainer extends React.Component<{}, IState> {
     )
   }
 }
+
