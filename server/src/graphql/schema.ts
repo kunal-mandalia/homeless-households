@@ -27,7 +27,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    getHomelessHouseholds(input: HomelessHouseholdsInput!): [HomelessHouseholds]!
+    homelessHouseholds(input: HomelessHouseholdsInput!): [HomelessHouseholds]!
   }
 `);
 

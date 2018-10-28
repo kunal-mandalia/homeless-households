@@ -14,7 +14,7 @@ export const typeDefs = `
   }
 
   type Filters {
-    ageRange: [Int!]
+    ageRange: [Int]
     decision: String
     ethnicity: String
     nationality: String

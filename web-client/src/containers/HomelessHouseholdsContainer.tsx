@@ -64,15 +64,15 @@ export class HomelessHouseholdsContainer extends React.Component<{}, IState> {
         if (loading) { return <LoadingIndicator /> };
         if (error) { return <p>Error :(</p> };
         if (!data) { return null };
-        const { getHomelessHouseholds } = data;
-        const filteredData = this.filterData(getHomelessHouseholds);
+        const { homelessHouseholds } = data;
+        const filteredData = this.filterData(homelessHouseholds);
         const count = filteredData.length;
-        const total = getHomelessHouseholds.length;
+        const total = homelessHouseholds.length;
 
         return (
           <HomelessHouseholds
             count={count}
-            data={getHomelessHouseholds}
+            data={homelessHouseholds}
             filteredData={filteredData}
             filters={this.state.filters}
             handleFilterChange={this.handleFilterChange}

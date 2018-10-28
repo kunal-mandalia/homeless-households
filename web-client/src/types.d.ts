@@ -11,7 +11,7 @@ declare interface IHomelessHouseholds {
 }
 
 declare interface IQueryHomelessHouseholds {
-  getHomelessHouseholds: IHomelessHouseholds[]
+  homelessHouseholds: IHomelessHouseholds[]
 }
 
 declare type NullableString = string | null;
