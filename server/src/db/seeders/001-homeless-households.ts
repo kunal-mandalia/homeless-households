@@ -58,10 +58,10 @@ export default {
   up: async (queryInterface: QueryInterface) => {
     const existingRecords = await queryInterface.sequelize.query(
       'SELECT COUNT(*) FROM "HomelessHouseholds"', {
-        raw: true,
         type: queryInterface.sequelize.QueryTypes.SELECT
       });
-    const { count } = existingRecords[0];
+
+    const count = parseInt(existingRecords[0].count, 10);
 
     if (count === 0) {
       const records = await getSeedData();
