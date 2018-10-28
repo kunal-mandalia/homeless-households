@@ -56,7 +56,18 @@ async function getSeedData() {
 export default {
   down: (queryInterface: QueryInterface) => queryInterface.bulkDelete("HomelessHouseholds", {}, {}),
   up: async (queryInterface: QueryInterface) => {
-    const records = await getSeedData();
-    return queryInterface.bulkInsert("HomelessHouseholds", records, {});
+    const existingRecords = await queryInterface.sequelize.query(
+      'SELECT COUNT(*) FROM "HomelessHouseholds"', {
+        raw: true,
+        type: queryInterface.sequelize.QueryTypes.SELECT
+      });
+    const { count } = existingRecords[0];
+
+    if (count === 0) {
+      const records = await getSeedData();
+      logger.info(`Inserting seed data for HomelessHouseholds`);
+      return queryInterface.bulkInsert("HomelessHouseholds", records, {});
+    }
+    logger.info(`Seed data not inserted. Found ${count} records in HomelessHouseholds`);
   },
 }
