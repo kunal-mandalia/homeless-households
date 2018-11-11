@@ -32,7 +32,7 @@ describe('resolvers', () => {
     }
     // act
     resolvers.Mutation.updateFilter(parent, args, context);
-    // assign
+    // assert
     expect(context.cache.writeQuery).toHaveBeenCalledTimes(2);
     expect(context.cache.writeQuery.mock.calls[0][0]).toMatchObject({
       data: {
