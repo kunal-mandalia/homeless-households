@@ -33,8 +33,9 @@ export const typeDefs = `
   }
 
   type Query {
-    homelessHouseholds(input: HomelessHouseholdsInput!): [HomelessHouseholds]!
     filters: Filters!
+    filteredHomelessHouseholds: [HomelessHouseholds]!
+    homelessHouseholds(input: HomelessHouseholdsInput!): [HomelessHouseholds]!
   }
 
   type Mutation {

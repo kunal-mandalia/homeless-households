@@ -2,7 +2,23 @@ import gql from 'graphql-tag';
 
 export const GET_HOMELESS_HOUSEHOLDS = gql`
   query HomelessHouseholds($input: HomelessHouseholdsInput!) {
-    homelessHouseholds(input: $input) {
+    homelessHouseholds(input: $input) @connection(key: "homelessHouseholds") {
+      id
+      age
+      decision
+      decisionCode
+      decisionDate
+      ethnicity
+      nationality
+      reason
+      need
+    }
+  }
+`
+
+export const GET_FILTERED_HOMELESS_HOUSEHOLDS = gql`
+  query {
+    filteredHomelessHouseholds @client {
       id
       age
       decision
