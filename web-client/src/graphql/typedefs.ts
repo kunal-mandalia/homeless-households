@@ -27,8 +27,17 @@ export const typeDefs = `
     offset: Int
   }
 
+  input UpdateFilterInput {
+    filterName: String!
+    filterValue: String
+  }
+
   type Query {
     homelessHouseholds(input: HomelessHouseholdsInput!): [HomelessHouseholds]!
     filters: Filters!
+  }
+
+  type Mutation {
+    updateFilter(input: UpdateFilterInput): Filters
   }
 `

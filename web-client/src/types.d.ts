@@ -35,3 +35,5 @@ declare interface IFilters {
   need: NullableString;
   reason: NullableString;
 }
+
+declare module 'waait';

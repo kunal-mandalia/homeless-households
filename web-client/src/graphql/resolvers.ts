@@ -1,4 +1,4 @@
-// import gql from 'graphql-tag';
+import { GET_FILTERS } from '../queries';
 
 export const defaults = {
   filters: {
@@ -12,33 +12,39 @@ export const defaults = {
   },
 };
 
-export const resolvers = {
+interface IUpdateFilterInput {
+  filterName: string;
+  filterValue: any;
+}
+
+interface IMutation {
+  updateFilter(parent: any, args: { input: IUpdateFilterInput }, context: any): boolean;
+}
+
+interface IResolvers {
+  Mutation: IMutation;
+}
+
+
+export const resolvers: IResolvers = {
   Mutation: {
-    // updateFilter: (_, { text }, { cache }) => {
-    //   const query = gql`
-    //     query GetFilters {
-    //       filters @client {
-    //         ageRange
-    //         decision
-    //         ethnicity
-    //         nationality
-    //         need
-    //         reason
-    //       }
-    //     }
-    //   `;
-    //   const previous = cache.readQuery({ query });
-    //   // const newTodo = {
-    //   //   id: nextTodoId++,
-    //   //   text,
-    //   //   completed: false,
-    //   //   __typename: 'TodoItem',
-    //   // };
-    //   const data = {
-    //     filters: previous.filters
-    //   };
-    //   cache.writeData({ data });
-    //   return {};
-    // },
+    updateFilter: (_, { input: { filterName, filterValue } }, { cache }) => {
+      const previousState = cache.readQuery({ query: GET_FILTERS });
+  
+      const data = {
+        filters: {
+          ...previousState.filters,
+          [filterName]: filterValue || null,
+          __typename: 'Filters',
+        }
+      };
+
+      cache.writeQuery({
+        data,
+        query: GET_FILTERS,
+      });
+
+      return true;
+    }
   },
 };

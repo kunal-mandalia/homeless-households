@@ -30,8 +30,9 @@ const TilesWrapper = styled.div`
 
 const Tile = styled.div`
   flex: 1;
-  flex-direction: column;
   flex-basis: 300px;
+  flex-grow: 2;
+  flex-direction: column;
   border: solid 4px ${COLORS.MAROON};
   min-height: 200px;
   background-color: ${COLORS.MAROON_LIGHT};
