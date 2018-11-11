@@ -11,7 +11,7 @@ declare interface IHomelessHouseholds {
 }
 
 declare interface IQueryHomelessHouseholds {
-  getHomelessHouseholds: IHomelessHouseholds[]
+  homelessHouseholds: IHomelessHouseholds[]
 }
 
 declare type NullableString = string | null;
@@ -35,3 +35,5 @@ declare interface IFilters {
   need: NullableString;
   reason: NullableString;
 }
+
+declare module 'waait';

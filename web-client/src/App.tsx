@@ -1,14 +1,12 @@
 import * as React from 'react'
-import './App.css';
-
-import { HomelessHouseholdsContainer } from './containers/HomelessHouseholdsContainer';
+import { HomelessHouseholds } from './components/HomelessHouseholds';
 
 
 class App extends React.Component {
 
   public render() {
     return (
-      <HomelessHouseholdsContainer />
+      <HomelessHouseholds />
     );
   }
 }

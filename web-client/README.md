@@ -34,3 +34,27 @@ Key:
 ## UI Theme AntDesign
 
 Antdesign has been themed via `config-overrides.js`.
+
+## Apollo client patterns
+
+Declarative components: 
+
+```javascript
+import { Mutation } from 'react-apollo'
+
+<Mutation mutation={MUTATION} variables={VARIABLES}>
+  {({ mutate, result }) => {
+    <MyComponent ... />
+  })}
+</Mutation>
+```
+
+Higher order components:
+
+```javascript
+import { graphql } from 'react-apollo'
+
+const MyComponent = ({ data }) => { ... }
+
+export default graphql(QUERY)(MyComponent)
+```

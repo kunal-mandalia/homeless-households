@@ -9,11 +9,11 @@ interface IHomelessHouseholdsInput {
 }
 
 interface IResolver {
-  getHomelessHouseholds(input: IHomelessHouseholdsInput): Promise<IHomelessHouseholdsAttributes[]>;
+  homelessHouseholds(input: IHomelessHouseholdsInput): Promise<IHomelessHouseholdsAttributes[]>;
 }
 
 const resolver: IResolver = {
-  getHomelessHouseholds: async ({ input: { limit = 10, offset = 0 } }) => {
+  homelessHouseholds: async ({ input: { limit = 10, offset = 0 } }) => {
     const records = await models.HomelessHouseholds
       .findAll({
         limit,
