@@ -37,5 +37,3 @@ declare interface IFilters {
 }
 
 declare module 'waait';
-
-declare module 'recharts';
