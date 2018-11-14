@@ -12,6 +12,7 @@ const LayoutWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap-reverse;
   min-height: 100vh;
+  background-color: ${COLORS.MAROON_LIGHT};
 `
 
 const SidebarWrapper = styled.div`
@@ -29,13 +30,8 @@ const TilesWrapper = styled.div`
 `
 
 const Tile = styled.div`
-  flex: 1;
-  flex-basis: 300px;
-  flex-grow: 2;
-  flex-direction: column;
+  flex: 1 1 320px;
   border: solid 4px ${COLORS.MAROON};
-  min-height: 200px;
-  background-color: ${COLORS.MAROON_LIGHT};
 `
 
 

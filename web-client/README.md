@@ -21,7 +21,7 @@ Insight into homelessless in London using Open Data.
 ---------- Filters (S)
 ------ Tiles (S)
 -------- Profile (S)
--------- Outcome (S)
+-------- Decision (S)
 -------- Need (S)
 -------- Age (S)
 -------- Ethnicity (S)
@@ -58,3 +58,12 @@ const MyComponent = ({ data }) => { ... }
 
 export default graphql(QUERY)(MyComponent)
 ```
+
+## Data Visualisation
+
+Recharts will be used as the data visualisation library for the following 'tiled' components:
+* Profile: Custom (Canvas / SVG)
+* Decision: RadarChart
+* Need: CustomActiveShapePieChart
+* Age: SimpleBarChart
+* Ethnicity: PieChartWithCustomizedLabel
