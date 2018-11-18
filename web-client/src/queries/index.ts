@@ -41,6 +41,7 @@ export const GET_FILTERS = gql`
       reason
       ethnicity
       nationality
+      touched
     }
   }
 `;

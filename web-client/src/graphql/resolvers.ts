@@ -14,6 +14,7 @@ export const defaults = {
     nationality: null,
     need: null,
     reason: null,
+    touched: false,
   },
 };
 
@@ -72,6 +73,7 @@ export const resolvers: IResolvers = {
           ...previousFilters.filters,
           [filterName]: filterValue || null,
           __typename: 'Filters',
+          touched: true,
         }
       };
 

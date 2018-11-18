@@ -1,9 +1,9 @@
+import { filters } from '../__fixtures__/filters';
+import { homelessHouseholds } from '../__fixtures__/homelessHouseholds'
 import {
   GET_FILTERS,
   GET_HOMELESS_HOUSEHOLDS,
 } from '../queries';
-import { filters } from './__fixtures__/filters';
-import { homelessHouseholds } from './__fixtures__/homelessHouseholds'
 import { resolvers } from './resolvers';
 
 describe('resolvers', () => {
@@ -38,7 +38,8 @@ describe('resolvers', () => {
       data: {
         filters: {
           ...filters,
-          need: "vulnerable - physical"
+          need: "vulnerable - physical",
+          touched: true,
         }
       }
     })
@@ -49,7 +50,7 @@ describe('resolvers', () => {
             age: 31,
             decision: "no priority need",
             decisionCode: 3,
-            decisionDate: "2015-09-30T00:00:00.000Z",
+            decisionDate: new Date("2015-09-30T00:00:00.000Z"),
             ethnicity: "Other",
             id: 7158,
             nationality: "Not Rec",

@@ -17,7 +17,7 @@ const LayoutWrapper = styled.div`
 
 const SidebarWrapper = styled.div`
   background-color: ${COLORS.MAROON};
-  flex-basis: 385px;
+  flex-basis: 400px;
   flex-grow: 0;
 `
 
@@ -30,7 +30,7 @@ const TilesWrapper = styled.div`
 `
 
 const Tile = styled.div`
-  flex: 1 1 320px;
+  flex: 1 1 400px;
   border: solid 4px ${COLORS.MAROON};
 `
 
