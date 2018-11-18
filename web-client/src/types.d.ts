@@ -10,10 +10,6 @@ declare interface IHomelessHouseholds {
   need: string,
 }
 
-declare interface IQueryHomelessHouseholds {
-  homelessHouseholds: IHomelessHouseholds[]
-}
-
 declare type NullableString = string | null;
  
 declare type FilterAttribute = "ageRange" | "decision" | "ethnicity" | "nationality" | "need" | "reason";
@@ -34,6 +30,7 @@ declare interface IFilters {
   nationality: NullableString
   need: NullableString;
   reason: NullableString;
+  touched: boolean;
 }
 
 declare module 'waait';

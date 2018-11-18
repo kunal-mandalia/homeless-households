@@ -20,6 +20,7 @@ export const typeDefs = `
     nationality: String
     need: String
     reason: String
+    touched: Boolean
   }
 
   input HomelessHouseholdsInput {
