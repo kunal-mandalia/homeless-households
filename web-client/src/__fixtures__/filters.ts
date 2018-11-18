@@ -6,4 +6,5 @@ export const filters = {
   nationality: null,
   need: null,
   reason: null,
+  touched: false
 }
