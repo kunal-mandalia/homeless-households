@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Decision from './dataVisualisation/Decision';
+import Need from './dataVisualisation/Need';
 import Filters from './Filters';
 import { Layout } from './Layout';
 
@@ -9,7 +10,7 @@ export const HomelessHouseholds: React.SFC<{}> = () => {
       sidebar={<Filters />}
       tiles={[
         <Decision key='tile-decision' />,
-        <div key='tile-need'/>,
+        <Need key='tile-need' />,
         <div key='tile-age'/>,
         <div key='tile-profile'/>,
         <div key='tile-reason'/>,
