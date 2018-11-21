@@ -6,6 +6,7 @@ import {
   Pie,
   PieChart,
   ResponsiveContainer,
+  Tooltip
 } from 'recharts';
 import styled from 'styled-components';
 import { DECISIONS_MAP } from '../../constants';
@@ -94,6 +95,7 @@ export const Decision = ({ getHomelessHouseholds, getFilteredHomelessHouseholds,
                 data.map((entry, index) => <Cell key={entry.name} fill={COLORS[entry.name]} />)
               }
             </Pie>
+            <Tooltip />
           </PieChart>
           </ResponsiveContainer>
       </PieWrapper>
