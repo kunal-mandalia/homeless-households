@@ -37,10 +37,18 @@ const Wrapper = styled.div`
   height: 100%;
 `
 
-export function prepareDataset(filteredHomelessHouseholds: IHomelessHouseholds[], homelessHouseholds: IHomelessHouseholds[], isFiltered: boolean) {
-  const hh = isFiltered ?  filteredHomelessHouseholds : homelessHouseholds;
+const AGE_RANGES = [
+  '< 18',
+  '18 - 24',
+  '25 - 34',
+  '35 - 44',
+  '45 - 54',
+  '55 - 64',
+  ' > 64'
+]
 
-  const applicantAgeRanges = hh.reduce((acc, cur, index) => {
+function groupHHByAgeRangeX(homelessHouseholds: IHomelessHouseholds[]) {
+  const hhByAge = homelessHouseholds.reduce((acc, cur) => {
     const { age } = cur;
     if (age < 18) {
       acc['< 18'] = acc['< 18'] + 1;
@@ -55,7 +63,7 @@ export function prepareDataset(filteredHomelessHouseholds: IHomelessHouseholds[]
     } else if (age < 65) {
       acc['55 - 64'] = acc['55 - 64'] + 1;
     } else {
-      acc['> 65'] = acc['> 65'] + 1;
+      acc['> 64'] = acc['> 64'] + 1;
     }
    return acc; 
   }, {
@@ -66,12 +74,21 @@ export function prepareDataset(filteredHomelessHouseholds: IHomelessHouseholds[]
     '35 - 44': 0,
     '45 - 54': 0,
     '55 - 64': 0,
-    '> 65': 0
+    '> 64': 0
   })
-  
-  return Object.keys(applicantAgeRanges).map(ageRange => ({
-    age: applicantAgeRanges[ageRange],
-    name: ageRange,
+
+  return hhByAge;
+}
+
+export function prepareDataset(filteredHomelessHouseholds: IHomelessHouseholds[], homelessHouseholds: IHomelessHouseholds[], isFiltered: boolean) {
+  const filteredHHByAge = groupHHByAgeRangeX(filteredHomelessHouseholds);
+  const hhByAge = groupHHByAgeRangeX(homelessHouseholds);
+
+
+  return AGE_RANGES.map(ageRange => ({
+    all: hhByAge[ageRange],
+    filtered: filteredHHByAge[ageRange],
+    name: ageRange
   }))
 }
 
@@ -89,6 +106,7 @@ export const Age = ({ getHomelessHouseholds, getFilteredHomelessHouseholds, getF
   }
 
   const data = prepareDataset(filteredHomelessHouseholds, homelessHouseholds, filters.touched);
+  const dataKey = filters.touched ? "filtered" : "all";
 
   return (
       <Wrapper>
@@ -98,7 +116,7 @@ export const Age = ({ getHomelessHouseholds, getFilteredHomelessHouseholds, getF
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
-              <Bar dataKey="age" fill="#ff5722" />
+              <Bar dataKey={dataKey} fill="#ff5722" />
           </BarChart>
           </ResponsiveContainer>
       </Wrapper>
