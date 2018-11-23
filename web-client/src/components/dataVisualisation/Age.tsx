@@ -116,7 +116,7 @@ export const Age = ({ getHomelessHouseholds, getFilteredHomelessHouseholds, getF
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
-              <Bar dataKey={dataKey} fill="#4363d2" />
+              <Bar dataKey={dataKey} fill="#ff5722" />
           </BarChart>
           </ResponsiveContainer>
       </Wrapper>
