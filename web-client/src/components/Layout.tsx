@@ -12,7 +12,7 @@ const LayoutWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap-reverse;
   min-height: 100vh;
-  background-color: ${COLORS.MAROON_LIGHT};
+  background-color: ${COLORS.MAROON};
 `
 
 const SidebarWrapper = styled.div`
@@ -22,16 +22,24 @@ const SidebarWrapper = styled.div`
 `
 
 const TilesWrapper = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex: 1;
   flex-grow: 8;
   flex-wrap: wrap;
-  border: solid 4px ${COLORS.MAROON};
+  width: 100%;
+  margin: 5px;
 `
 
 const Tile = styled.div`
-  flex: 1 1 400px;
-  border: solid 4px ${COLORS.MAROON};
+  background-color: ${COLORS.MAROON_LIGHT};
+  box-sizing: border-box;
+  margin: 5px;
+  flex-basis: 400px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 50%;
+  min-height: 470px;
 `
 
 
