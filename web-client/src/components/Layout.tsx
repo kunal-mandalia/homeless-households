@@ -39,6 +39,7 @@ const Tile = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   width: 50%;
+  min-height: 450px;
 `
 
 

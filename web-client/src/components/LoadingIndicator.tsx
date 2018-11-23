@@ -8,7 +8,7 @@ const antIcon = <Icon type="loading" style={{ fontSize: '5em' }} spin={true} />;
 const SpinWrapper = styled.div`
   background-color: ${COLORS.MAROON};
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   align-items: center;
   justify-content: center;
