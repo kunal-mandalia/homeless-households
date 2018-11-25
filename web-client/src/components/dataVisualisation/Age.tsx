@@ -112,7 +112,7 @@ export const Age = ({ getHomelessHouseholds, getFilteredHomelessHouseholds, getF
       <Wrapper>
         <ResponsiveContainer aspect={1}>
           <BarChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid horizontal={false} vertical={false} />
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />

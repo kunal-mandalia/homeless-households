@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const TileWrapper = styled.div`
-  padding: 15px;
-  height: 87%;
+  margin: 15px;
+  height: 100%;
 `
 
 const Center = styled.div`
