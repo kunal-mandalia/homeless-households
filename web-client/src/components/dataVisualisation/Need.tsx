@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { compose, graphql } from 'react-apollo';
 import {
-  Cell,
-  Legend,
-  Pie,
-  PieChart,
+  Bar,
+  BarChart,
   ResponsiveContainer,
-  Tooltip
+  Tooltip,
+  XAxis,
+  YAxis
 } from 'recharts';
 import styled from 'styled-components';
 import {
@@ -14,6 +14,7 @@ import {
   GET_FILTERS,
   GET_HOMELESS_HOUSEHOLDS,
 } from '../../queries';
+import { limitStringLength } from '../../util'
 import { Tile } from './Tile';
 
 interface IProps {
@@ -31,24 +32,16 @@ interface IProps {
   }
 }
 
-const COLORS = {
-  "alcohol dependency": "#49da9a",
-  "care leaver under 21 yrs": "#e6261f",
-  "dependent children": "#a3e048",
-  "domestic violence/ threat": "#34bbe6",
-  "drug dependency": "#4355db",
-  "emergency-fire/flood etc": "#eb7532",
-  "former refugee/ex-asylum": "#d23be7",
-
-  "no priority need": "#E0BE36",
-  "pregnant": "#75B09C",
-  "vulnerable": "#628395",
-  "young person 16/17 yrs": "#D8F793",
-}
-
-const PieWrapper = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+`
+
+const NeedToolTip = styled.div`
+  color: black;
+  border: solid 1px grey;
+  background-color: white;
+  padding: 15px;
 `
 
 export function prepareDataset(filteredHomelessHouseholds: IHomelessHouseholds[], homelessHouseholds: IHomelessHouseholds[], isFiltered: boolean) {
@@ -69,10 +62,24 @@ export function prepareDataset(filteredHomelessHouseholds: IHomelessHouseholds[]
     return acc;    
   }, {})
   
-  return Object.keys(applicantFrequencyByNeed).map(need => ({
-    name: need,
-    value: applicantFrequencyByNeed[need]
-  }))
+  return Object.keys(applicantFrequencyByNeed)
+    .map(need => ({
+      name: need,
+      shortName: limitStringLength(need, 7),
+      value: applicantFrequencyByNeed[need]
+    }))
+    .sort((a,b) => b.value - a.value);
+}
+
+function renderTooltip(props: any) {
+  if (props.active) {
+    const { payload } = props;
+    const { name, value } = payload[0].payload;
+    return <NeedToolTip>
+      {name}: {value}
+    </NeedToolTip>
+  }
+  return null;
 }
 
 export const Need = ({ getHomelessHouseholds, getFilteredHomelessHouseholds, getFilters }: IProps) => {
@@ -91,30 +98,24 @@ export const Need = ({ getHomelessHouseholds, getFilteredHomelessHouseholds, get
   const data = prepareDataset(filteredHomelessHouseholds, homelessHouseholds, filters.touched);
 
   return (
-      <PieWrapper>
+      <Wrapper>
         <ResponsiveContainer aspect={1}>
-          <PieChart>
-          <Legend verticalAlign="top" align="left" height={50} layout="horizontal" />
-            <Pie
-              data={data} 
-              cx="50%"
-              cy="50%"
-              innerRadius="50%"
-              outerRadius="60%" 
-              fill="#8884d8"
-              paddingAngle={5}
-              dataKey="value"
-              label={true}
-              animationDuration={1000}
-            >
-              {
-                data.map((entry) => <Cell key={entry.name} fill={COLORS[entry.name]} />)
-              }
-            </Pie>
-            <Tooltip />
-          </PieChart>
-          </ResponsiveContainer>
-      </PieWrapper>
+          <BarChart
+            width={1400}
+            height={400}
+            data={data}
+            margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+            layout="vertical"
+          >
+            <XAxis type="number" />
+            <YAxis dataKey="shortName" type="category" />
+            <Tooltip
+              content={renderTooltip}
+            />
+            <Bar dataKey="value" fill="#ff7300" maxBarSize={30} />
+          </BarChart>
+        </ResponsiveContainer>
+      </Wrapper>
   )
 }
 
