@@ -184,7 +184,7 @@ export default compose(
     options: () => ({
       variables: {
         input: {
-          limit: 10,
+          limit: 1000,
           offset: 0,
         }
       }
